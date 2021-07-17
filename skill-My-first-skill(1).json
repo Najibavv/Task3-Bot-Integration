@@ -1,0 +1,724 @@
+{
+  "name": "My first skill",
+  "type": "dialog",
+  "status": "Available",
+  "created": "2021-07-02T15:48:36.054Z",
+  "updated": "2021-07-04T17:24:52.502Z",
+  "language": "en",
+  "skill_id": "441eef85-6860-4b9a-81cf-4a65eefece1a",
+  "workspace": {
+    "actions": [
+      {
+        "steps": [
+          {
+            "step": "step_242",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "this is a part of Najiba's work in the summer internship (Smart methods 2021)"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_242",
+            "next_step": "step_785"
+          },
+          {
+            "step": "step_248",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "The summer internship gives you the chance to build your stores so that when you're ready to go on that job interview, you have the skills, the experience, the desire, and the confidence to make it happen. Find the right opportunity and go for it."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_248",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_785"
+                },
+                {
+                  "value": "Why summer internship is important?",
+                  "from_entity": "action_12564_step_785_entity_13164"
+                }
+              ]
+            }
+          },
+          {
+            "step": "step_701",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Well, she is a moroccan girl. She is a computer science student. and you cant tell her she aint flyyyyy."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_701",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_785"
+                },
+                {
+                  "value": "More about Najiba",
+                  "from_entity": "action_12564_step_785_entity_13164"
+                }
+              ]
+            },
+            "next_step": "step_905"
+          },
+          {
+            "step": "step_785",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "please select any of the following actions that interest you"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                },
+                {
+                  "options": [
+                    {
+                      "label": "More on Smart Methods",
+                      "value": {
+                        "input": {
+                          "text": "More on Smart Methods"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Why summer internship is important?",
+                      "value": {
+                        "input": {
+                          "text": "Why summer internship is important?"
+                        }
+                      }
+                    },
+                    {
+                      "label": "More about Najiba",
+                      "value": {
+                        "input": {
+                          "text": "More about Najiba"
+                        }
+                      }
+                    },
+                    {
+                      "label": "This project",
+                      "value": {
+                        "input": {
+                          "text": "This project"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I didn't catch that. Select a valid option:"
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text": "I'm afraid I don't understand. Let me see if I can help another way."
+                        }
+                      ],
+                      "response_type": "text"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "end_action"
+                }
+              }
+            ],
+            "question": {
+              "entity": "action_12564_step_785_entity_13164",
+              "max_tries": 3,
+              "only_populate_when_prompted": false
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_785",
+            "next_step": "step_701"
+          },
+          {
+            "step": "step_789",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "This website is an interface to control the Arm and the Base of the robot.\nThe robot is a wrestling robot. It fights with another robot. I think humans love fighting. We could have thought of a robot that plants flowers but meh no adrenaline."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "only_populate_when_prompted": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_789",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_785"
+                },
+                {
+                  "value": "This project",
+                  "from_entity": "action_12564_step_785_entity_13164"
+                }
+              ]
+            },
+            "next_step": "step_248"
+          },
+          {
+            "step": "step_905",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "A national commercial enterprise established in 2010 registered with the Ministry of Commerce and specialized in automated equipment, robotics and artificial intelligence."
+                          },
+                          {
+                            "scalar": " It is considered the first commercial facility of its kind in the service of researchers and innovators in the Arab world and is classified by Forbes magazine as one of the most innovative companies in the Kingdom of Saudi Arabia in the last classification of 2015."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_905",
+            "condition": {
+              "eq": [
+                {
+                  "variable": "step_785"
+                },
+                {
+                  "value": "More on Smart Methods",
+                  "from_entity": "action_12564_step_785_entity_13164"
+                }
+              ]
+            },
+            "next_step": "step_789"
+          }
+        ],
+        "title": "What is this",
+        "action": "action_12564",
+        "handlers": [],
+        "condition": {
+          "intent": "action_12564_intent_21833"
+        },
+        "variables": [
+          {
+            "title": "this is a part of Najiba's work in the summer internship (Smart ",
+            "variable": "step_242"
+          },
+          {
+            "title": "The summer internship gives you the chance to build your stores ",
+            "variable": "step_248"
+          },
+          {
+            "title": "Well, she is a moroccan girl. She is a computer science student.",
+            "variable": "step_701"
+          },
+          {
+            "title": "please select any of the following actions that interest you",
+            "variable": "step_785"
+          },
+          {
+            "title": "This website is an interface to control the Arm and the Base of ",
+            "variable": "step_789"
+          },
+          {
+            "title": "A national commercial enterprise established in 2010 registered ",
+            "variable": "step_905"
+          },
+          {
+            "variable": "step_986_result_1"
+          }
+        ],
+        "next_action": "anything_else",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_322",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "You are very welcome!\nhere is music \nhttps://youtu.be/hC8CH0Z3L54?t=1"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_322"
+          }
+        ],
+        "title": "thanks",
+        "action": "action_29965",
+        "handlers": [],
+        "condition": {
+          "intent": "action_29965_intent_19257"
+        },
+        "variables": [
+          {
+            "title": "You are very welcome! here is music https://youtu.be/hC8CH0Z3L54",
+            "variable": "step_322"
+          }
+        ],
+        "next_action": "action_8702",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_520",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": ""
+                          },
+                          {
+                            "system_variable": "current_date"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_520"
+          }
+        ],
+        "title": "What date is it?",
+        "action": "action_5157",
+        "handlers": [],
+        "condition": {
+          "intent": "action_5157_intent_8411"
+        },
+        "variables": [
+          {
+            "title": "{variable}",
+            "variable": "step_520"
+          }
+        ],
+        "next_action": "action_12564",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_561",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "that was fun...Have a great "
+                          },
+                          {
+                            "system_variable": "current_date"
+                          },
+                          {
+                            "scalar": " !"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_561"
+          }
+        ],
+        "title": "goodbye",
+        "action": "action_8702",
+        "handlers": [],
+        "condition": {
+          "intent": "action_8702_intent_21872"
+        },
+        "variables": [
+          {
+            "title": "that was fun...Have a great {variable} !",
+            "variable": "step_561"
+          }
+        ],
+        "next_action": "action_5157",
+        "disambiguation_opt_out": false
+      },
+      {
+        "steps": [
+          {
+            "step": "step_986",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "ehhh go easy on me I'm no AI and have no brain cells Email Najiba and tell her to train me! Jarraf.na@gmail.com"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action",
+              "invoke_action": {
+                "action": "action_12564",
+                "parameters": null,
+                "result_variable": "step_986_result_1"
+              }
+            },
+            "variable": "step_986"
+          }
+        ],
+        "title": "Retry when no action matches",
+        "action": "anything_else",
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "ehhh go easy on me I'm no AI and have no brain cells Email Najib",
+            "variable": "step_986"
+          },
+          {
+            "variable": "step_986_result_1"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hello there fellow human...Or..Alian hehe, How can I help?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true,
+              "only_populate_when_prompted": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "title": "Hello there fellow human...Or..Alian hehe, How can I help?",
+            "variable": "step_001"
+          },
+          {
+            "variable": "step_986_result_1"
+          }
+        ],
+        "next_action": "action_29965",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_12564_intent_21833",
+        "examples": [
+          {
+            "text": "?"
+          },
+          {
+            "text": "hello"
+          },
+          {
+            "text": "hi"
+          },
+          {
+            "text": "how can this bot help me"
+          },
+          {
+            "text": "tell me about this bot"
+          },
+          {
+            "text": "What is this"
+          },
+          {
+            "text": "what is this?"
+          },
+          {
+            "text": "What this project is about?"
+          }
+        ]
+      },
+      {
+        "intent": "action_29965_intent_19257",
+        "examples": [
+          {
+            "text": "thanks"
+          }
+        ]
+      },
+      {
+        "intent": "action_5157_intent_8411",
+        "examples": [
+          {
+            "text": "What date is it?"
+          }
+        ]
+      },
+      {
+        "intent": "action_8702_intent_21872",
+        "examples": [
+          {
+            "text": "bye"
+          },
+          {
+            "text": "ciao"
+          },
+          {
+            "text": "goodbye"
+          }
+        ]
+      }
+    ],
+    "entities": [
+      {
+        "entity": "action_12564_step_785_entity_13164",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "More about Najiba",
+            "synonyms": [
+              "najiba"
+            ]
+          },
+          {
+            "type": "synonyms",
+            "value": "More on Smart Methods",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "This project",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Why summer internship is important?",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [],
+    "counterexamples": [
+      {
+        "text": "can you cook"
+      },
+      {
+        "text": "عربية"
+      }
+    ],
+    "system_settings": {
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "none_of_the_above_prompt": "None of the above"
+      }
+    },
+    "learning_opt_out": false
+  },
+  "description": "",
+  "workspace_id": "441eef85-6860-4b9a-81cf-4a65eefece1a",
+  "dialog_settings": {
+    "actions": true
+  }
+}
